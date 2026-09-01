@@ -1,8 +1,16 @@
 const prompt = require("prompt-sync")();
 const timsort = (arr) => {
     for (let i = 1; i < 11; i++) {
-        corredores = Number(prompt(`Ingrese el tiempo del ${i} Corredor `))
-        arr.push(corredores)
+        try {
+                corredores = Number(prompt(`Ingrese el tiempo del ${i} Corredor `))
+                if (isNaN(corredores))
+                    throw new Error(`Error porfa solo ingrese numeros`)
+                arr.push(corredores)
+        }
+        catch(error){
+            console.log(error.message)
+            i--
+        }
     }
         arr.sort((a,b) => a-b)
         return arr

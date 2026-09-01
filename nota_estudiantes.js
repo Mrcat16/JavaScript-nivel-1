@@ -1,14 +1,14 @@
 const prompt = require(`prompt-sync`) ();
 const nota_final_estudiantes = (arr) => {
     for (let i = 1; i < 9; i++) {
-        estudiantes = Number(prompt(`Ingrese su nota final del 1 al 100 ${i} `))
+        const estudiantes = Number(prompt(`Ingrese su nota final del 1 al 100 ${i} `))
         console.log()
         arr.push(estudiantes)
     }
     arr.sort((a,b) => b- a);
     return arr
 }
-lista = []
+const lista = []
 nota_final_estudiantes(lista)
 console.log(`Primeros 3 Lugares`)
 console.log()
