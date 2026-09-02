@@ -1,3 +1,4 @@
+const guardarDato = require('./db.js');
 const prompt = require("prompt-sync")();
 let opcion = 0
 let carrito = []
@@ -20,11 +21,13 @@ const comprar = () => {
     producto = prompt(``).toLowerCase()
     carrito.push(producto)
     console.log(`\nEl producto ${producto} se a añadido al carrito correctamente\n`)
+    guardarDato('cafeteria', producto);
 }
 const ver_carrito = () => {
     console.log(`\nTu carrito\n`)
     carrito.slice(0,3).forEach((x, i) => {
-        console.log(`\n${i + 1}.${x}\n`)
+        console.log(`${i + 1}.${x}`)
+    console.log()
     })
 }
 while (true) {
@@ -38,5 +41,5 @@ while (true) {
         comprar()
     else if (opcion === 4)
         ver_carrito()
-
 }
+
