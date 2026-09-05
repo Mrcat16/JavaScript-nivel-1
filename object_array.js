@@ -8,5 +8,5 @@ console.log(object)
 const array = [32, 12, 75]
 
 array.push(16)
-array.sort((a,b) => a - b)
+array.sort((a,b) => b - a)
 console.log(array)
